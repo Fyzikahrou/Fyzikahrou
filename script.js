@@ -1,25 +1,22 @@
 /* === HLAVNÍ SKRIPT FYZIKA HROU (FINÁLNÍ VERZE) === */
 
-// 1. PŘEPÍNÁNÍ SEKCÍ A FILTROVÁNÍ
+// 1. PŘEPÍNÁNÍ KAPITOL
 function prepnoutSekci(idSekce, filtr = null) {
     
-    // Skryjeme všechny sekce
     document.querySelectorAll('.obsah-sekce').forEach(s => s.style.display = 'none');
-
-    // Zobrazíme vybranou sekci
+    
     const sekce = document.getElementById(idSekce);
     if (sekce) {
         sekce.style.display = 'block';
-
-        // FILTROVÁNÍ (ZŠ / SŠ)
+        
         const bloky = sekce.querySelectorAll('.ucivo-blok');
         bloky.forEach(blok => {
             const tagyBloku = blok.getAttribute('data-tags');
             if (filtr === null) {
-                // Žádný filtr = zobrazit vše
+
                 blok.classList.remove('hidden-by-filter');
             } else {
-                // Máme filtr = zobrazit jen shodné
+                
                 if (tagyBloku && tagyBloku.includes(filtr)) {
                     blok.classList.remove('hidden-by-filter');
                 } else {
@@ -29,13 +26,11 @@ function prepnoutSekci(idSekce, filtr = null) {
         });
     }
 
-    // Reset hledání (aby nezůstal text v poli)
     if(idSekce !== 'vyhledavani') {
         const s = document.getElementById('search-input');
         if(s) s.value = '';
     }
 
-    // Obnova MathJaxu (vzorečky)
     if (window.MathJax) {
         MathJax.typesetPromise();
     }
@@ -61,7 +56,7 @@ function zkontroluj(idInputu, idVystupu, spravnaHodnota) {
 // 3. CHYTRÉ VYHLEDÁVÁNÍ (Prohledává text na stránce)
 function hledatObsah() {
     let hledanyText = document.getElementById('search-input').value.toLowerCase();
-    if (hledanyText.length < 3) return; // Hledáme až od 3 písmen
+    if (hledanyText.length < 3) return; 
 
     const vsechnyBloky = document.querySelectorAll('.ucivo-blok');
 
@@ -69,17 +64,14 @@ function hledatObsah() {
         let textBloku = blok.textContent.toLowerCase();
 
         if (textBloku.includes(hledanyText)) {
-            // Našli jsme shodu -> zjistíme sekci
             let rodicovskaSekce = blok.closest('.obsah-sekce');
 
             if (rodicovskaSekce) {
-                // Přepneme zobrazení ručně (bez mazání inputu)
                 document.querySelectorAll('.obsah-sekce').forEach(s => s.style.display = 'none');
                 rodicovskaSekce.style.display = 'block';
                 
                 if (window.MathJax) MathJax.typesetPromise();
 
-                // Scroll a efekt
                 blok.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 
                 blok.style.transition = "0.3s";
@@ -91,7 +83,7 @@ function hledatObsah() {
                     blok.style.transform = "scale(1)";
                 }, 1500);
 
-                return; // Našli jsme první, končíme
+                return; 
             }
         }
     }

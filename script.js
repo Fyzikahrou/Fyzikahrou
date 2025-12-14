@@ -49,10 +49,10 @@ function zkontroluj(idInputu, idVystupu, spravnaHodnota) {
     let hodnota = parseFloat(vstup.value.replace(',', '.'));
 
     if (Math.abs(hodnota - spravnaHodnota) < 0.1) {
-        vystup.innerHTML = "✅ Správně!";
+        vystup.innerHTML = "Správně!";
         vystup.className = "text-success fw-bold mt-2";
     } else {
-        vystup.innerHTML = "❌ Zkus to znovu.";
+        vystup.innerHTML = "Zkus to znovu.";
         vystup.className = "text-danger fw-bold mt-2";
     }
 }
@@ -162,13 +162,13 @@ function zkontrolujDrill() {
     let uzivatel = parseFloat(drillInput.value.replace(',', '.'));
 
     if (isNaN(uzivatel)) {
-        drillFeedback.innerHTML = `<span class="text-warning">⚠️ Zadej číslo!</span>`;
+        drillFeedback.innerHTML = `<span class="text-warning">Zadej číslo!</span>`;
         return;
     }
     if (Math.abs(uzivatel - aktualniDrill.spravnaOdpoved) < 0.0001) {
-        drillFeedback.innerHTML = `<span class="text-success">✅ Správně!</span>`;
+        drillFeedback.innerHTML = `<span class="text-success">Správně!</span>`;
     } else {
-        drillFeedback.innerHTML = `<span class="text-danger">❌ Chyba. Správně je ${aktualniDrill.spravnaOdpoved}</span>`;
+        drillFeedback.innerHTML = `<span class="text-danger">Chyba. Správně je ${aktualniDrill.spravnaOdpoved}</span>`;
     }
 }
 
@@ -189,11 +189,11 @@ function spocitejVahu() {
 function spocitejKeplera() {
     const a = parseFloat(document.getElementById('inp-kepler').value);
     if (isNaN(a) || a <= 0) {
-        document.getElementById('msg-kepler').innerHTML = "❌ Zadej kladnou vzdálenost!";
+        document.getElementById('msg-kepler').innerHTML = "Zadej kladnou vzdálenost!";
         return;
     }
     const T = Math.sqrt(Math.pow(a, 3));
-    document.getElementById('msg-kepler').innerHTML = `✅ Oběhne Slunce za <strong>${T.toFixed(1)} let</strong>.`;
+    document.getElementById('msg-kepler').innerHTML = `Oběhne Slunce za <strong>${T.toFixed(1)} let</strong>.`;
 }
 
 

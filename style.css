@@ -21,8 +21,8 @@ body {
 .navbar { 
     background: rgba(255, 255, 255, 0.9) !important; 
     backdrop-filter: blur(10px); 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px #a29bfe; 
+    border-bottom: 1px solid #a29bfe;
     padding: 15px 0;
 }
 
@@ -53,6 +53,7 @@ body {
 
 
 h1 { 
+   
     font-weight: 800;
     letter-spacing: -1px;
     color:#6c5ce7;  
@@ -72,6 +73,34 @@ h3 {
     margin-top: 2.5rem; 
     display: inline-block;
 }
+
+#uvod .card{
+    margin: 0px 20px ;
+}
+
+#uvod .card-body{
+    color: #2d3436 !important;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: 0 4px 30px #a29bfe;
+    
+}
+
+.btn-light {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    border-radius: 12px;
+    padding: 10px 25px;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-light:hover {
+    border-color: #6c5ce7;
+    transition: 500ms;
+}
+
 
 .section-subtitle {
     font-size: 1.2rem;
@@ -307,9 +336,14 @@ img.img-fluid {
 footer{
     
     background: rgba(255, 255, 255, 0.9);
-    border-top: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 0px 20px rgba(0,0,0,0.05);
+    border-top: 1px solid #a29bfe;
+    box-shadow: 0 0px 20px #a29bfe;
 
+}
+
+footer img.img-fluid{
+    border-radius: 0px;
+    box-shadow: none;
 }
 
 

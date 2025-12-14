@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,110 +10,137 @@
     <link rel="icon" href="img/atom-svgrepo-com.svg" style="color: #6c5ce7 ;">
 
     <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']] 
-      }
-    };
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
     </script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body class="bg-white">
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#" onclick="prepnoutSekci('uvod')">Fyzika Hrou</a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('jednotky')">Jednotky</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('jednotky')">Jednotky</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('latky')">Látky</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('mechanika')">Mechanika</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('mechanika')">Mechanika</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('optika')">Optika</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('elektrina')">Elektřina</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('elektrina')">Elektřina</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="prepnoutSekci('vesmir')">Vesmír</a></li>
 
                     <li class="nav-item d-none d-lg-block mx-2 border-end border-secondary"></li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
                             Podle tříd
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
-                            <li><h6 class="dropdown-header">Základní škola</h6></li>
+
+                            <li>
+                                <h6 class="dropdown-header">Základní škola</h6>
+                            </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">6. Třída</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('latky', 'zs6')"> Látky a atomy</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('jednotky', 'zs6')"> Fyzikální veličiny</a></li>
-                                    
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('latky', 'zs6')"> Látky
+                                            a atomy</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('jednotky', 'zs6')">
+                                            Fyzikální veličiny</a></li>
+
                                 </ul>
                             </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">7. Třída</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'zs7')"> Mechanika (Pohyb, Síla, Tlak)</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('optika', 'zs7')"> Optika</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'zs7')">
+                                            Mechanika (Pohyb, Síla, Tlak)</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('optika', 'zs7')">
+                                            Optika</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">8. Třída</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('elektrina', 'zs8')"> Elektřina</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'zs8')"> Mechanická práce a energie</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('elektrina', 'zs8')">
+                                            Elektřina</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'zs8')">
+                                            Mechanická práce a energie</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">9. Třída</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('vesmir', 'zs9')"> Vesmír a Astronomie</a></li>
-                                    </ul>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('vesmir', 'zs9')">
+                                            Vesmír a Astronomie</a></li>
+                                </ul>
                             </li>
 
-                            <li><hr class="dropdown-divider"></li>
-                            <li><h6 class="dropdown-header">Střední škola</h6></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <h6 class="dropdown-header">Střední škola</h6>
+                            </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">1. Ročník SŠ</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'ss1')"> Mechanika (Kinematika, Dynamika)</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('jednotky', 'ss1')"> Vektory a měření</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('latky', 'ss1')"> Molekulová fyzika</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'ss1')">
+                                            Mechanika (Kinematika, Dynamika)</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('jednotky', 'ss1')">
+                                            Vektory a měření</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('latky', 'ss1')">
+                                            Molekulová fyzika</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">2. Ročník SŠ</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'ss2')"> Mechanická energie</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('latky', 'ss2')"> Termodynamika</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('elektrina', 'ss2')"> Elektrické pole</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('mechanika', 'ss2')">
+                                            Mechanická energie</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('latky', 'ss2')">
+                                            Termodynamika</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('elektrina', 'ss2')">
+                                            Elektrické pole</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">3. Ročník SŠ</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('elektrina', 'ss3')"> Elektrické obvody</a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('optika', 'ss3')"> Optika</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('elektrina', 'ss3')">
+                                            Elektrické obvody</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('optika', 'ss3')">
+                                            Optika</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropend">
                                 <a class="dropdown-item" href="#">4. Ročník SŠ</a>
                                 <ul class="dropdown-menu submenu">
-                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('vesmir', 'ss4')"> Astrofyzika a Kosmologie</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="prepnoutSekci('vesmir', 'ss4')">
+                                            Astrofyzika a Kosmologie</a></li>
                                 </ul>
                             </li>
 
@@ -121,21 +149,61 @@
                 </ul>
 
                 <form class="d-flex" role="search" onsubmit="return false;">
-                    <input class="form-control me-2 form-control-sm" type="search" id="search-input" placeholder="Hledat..." onkeyup="hledatObsah()">
+                    <input class="form-control me-2 form-control-sm" type="search" id="search-input"
+                        placeholder="Hledat..." onkeyup="hledatObsah()">
                 </form>
             </div>
         </div>
     </nav>
 
     <div class="container mb-5" style="max-width: 900px; padding-top: 40px;">
-        
+
         <div id="uvod" class="obsah-sekce">
             <div class="text-center py-5">
                 <h1 class="display-4 fw-bold">Vítej ve světě fyziky</h1>
                 <p class="lead text-muted">Vyber si téma v menu nebo zvol svůj ročník pro filtrování učiva.</p>
             </div>
-        </div>
 
+
+            <div id="rozcestnik" class="container my-5 pb-5">
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm card-hover " style="border: solid #6c5ce7;">
+                            <div class="card-body text-center p-4">
+                                <h3>Mechanika</h3>
+                                <p>Pohyb, síla, energie a stroje. Základ všeho.</p>
+                                <a href="#" onclick="prepnoutSekci('mechanika', 'all')"
+                                    class="btn btn-light btn-sm rounded-pill stretched-link">Přejít</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm card-hover " style="border: solid #6c5ce7;">
+                            <div class="card-body text-center p-4">
+                                <h3>Elektřina</h3>
+                                <p>Obvody, napětí, proud a magnetismus.</p>
+                                <a href="#" onclick="prepnoutSekci('elektrina', 'all')"
+                                    class="btn btn-light btn-sm rounded-pill stretched-link">Přejít</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm card-hover" style="border: solid #6c5ce7;">
+                            <div class="card-body text-center p-4">
+                                <h3>Vesmír</h3>
+                                <p>Planety, hvězdy a zákony astrofyziky.</p>
+                                <a href="#" onclick="prepnoutSekci('vesmir', 'all')"
+                                    class="btn btn-light btn-sm rounded-pill stretched-link">Přejít</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div id="jednotky" class="obsah-sekce" style="display: none;">
             <h2>Jednotky a veličiny</h2>
             <div class="section-subtitle">Základy měření, soustava SI a práce s chybou.</div>
@@ -143,8 +211,9 @@
             <div class="ucivo-blok" data-tags="zs6 all">
                 <span class="badge-level level-zs">Základní škola (6. třída)</span>
                 <h3>1. Co je to fyzikální veličina?</h3>
-                <p>Fyzikální veličina je všechno, co můžeme <strong>změřit</strong> nebo <strong>spočítat</strong>. Každá veličina se skládá ze dvou částí: číselné hodnoty a jednotky.</p>
-                
+                <p>Fyzikální veličina je všechno, co můžeme <strong>změřit</strong> nebo <strong>spočítat</strong>.
+                    Každá veličina se skládá ze dvou částí: číselné hodnoty a jednotky.</p>
+
                 <div class="alert alert-secondary text-center">
                     <strong>Hodnota + Jednotka = Veličina</strong><br>
                     5 kg (hmotnost)<br>
@@ -158,8 +227,10 @@
             <div class="ucivo-blok" data-tags="zs6 all">
                 <span class="badge-level level-zs">Základní škola (6. třída)</span>
                 <h3>2. Mezinárodní soustava SI</h3>
-                <p>Dříve měřil každý jinak (loket, sáh, stopa, palec). Obchodování a věda byly složité. Proto se v roce 1960 svět dohodl na jednotné soustavě <strong>SI (Système International)</strong>.</p>
-                <p>Tato soustava má <strong>7 základních jednotek</strong>. Všechny ostatní (Newton, Joule, Watt...) jsou odvozené z těchto sedmi.</p>
+                <p>Dříve měřil každý jinak (loket, sáh, stopa, palec). Obchodování a věda byly složité. Proto se v roce
+                    1960 svět dohodl na jednotné soustavě <strong>SI (Système International)</strong>.</p>
+                <p>Tato soustava má <strong>7 základních jednotek</strong>. Všechny ostatní (Newton, Joule, Watt...)
+                    jsou odvozené z těchto sedmi.</p>
 
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered">
@@ -172,13 +243,48 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Délka</td><td>$l, d, s$</td><td>metr</td><td>m</td></tr>
-                            <tr><td>Hmotnost</td><td>$m$</td><td>kilogram</td><td>kg</td></tr>
-                            <tr><td>Čas</td><td>$t$</td><td>sekunda</td><td>s</td></tr>
-                            <tr><td>Elektrický proud</td><td>$I$</td><td>ampér</td><td>A</td></tr>
-                            <tr><td>Termodynamická teplota</td><td>$T$</td><td>kelvin</td><td>K</td></tr>
-                            <tr><td>Látkové množství</td><td>$n$</td><td>mol</td><td>mol</td></tr>
-                            <tr><td>Svítivost</td><td>$I_v$</td><td>kandela</td><td>cd</td></tr>
+                            <tr>
+                                <td>Délka</td>
+                                <td>$l, d, s$</td>
+                                <td>metr</td>
+                                <td>m</td>
+                            </tr>
+                            <tr>
+                                <td>Hmotnost</td>
+                                <td>$m$</td>
+                                <td>kilogram</td>
+                                <td>kg</td>
+                            </tr>
+                            <tr>
+                                <td>Čas</td>
+                                <td>$t$</td>
+                                <td>sekunda</td>
+                                <td>s</td>
+                            </tr>
+                            <tr>
+                                <td>Elektrický proud</td>
+                                <td>$I$</td>
+                                <td>ampér</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Termodynamická teplota</td>
+                                <td>$T$</td>
+                                <td>kelvin</td>
+                                <td>K</td>
+                            </tr>
+                            <tr>
+                                <td>Látkové množství</td>
+                                <td>$n$</td>
+                                <td>mol</td>
+                                <td>mol</td>
+                            </tr>
+                            <tr>
+                                <td>Svítivost</td>
+                                <td>$I_v$</td>
+                                <td>kandela</td>
+                                <td>cd</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -188,27 +294,38 @@
             <div class="ucivo-blok" data-tags="zs6 ss1 all">
                 <span class="badge-level level-zs">ZŠ + SŠ</span>
                 <h3>3. Násobky a díly jednotek (Předpony)</h3>
-                <p>Ve fyzice zkoumáme věci obrovské (vzdálenost planet) i maličké (velikost atomu). Abychom nemuseli psát spoustu nul, používáme předpony.</p>
-                
+                <p>Ve fyzice zkoumáme věci obrovské (vzdálenost planet) i maličké (velikost atomu). Abychom nemuseli
+                    psát spoustu nul, používáme předpony.</p>
+
                 <div class="row">
                     <div class="col-md-6">
                         <h5 class="text-primary">Zvětšování (Násobky)</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>Tera (T)</strong></span> <span>bilion ($10^{12}$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>Giga (G)</strong></span> <span>miliarda ($10^9$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>Mega (M)</strong></span> <span>milion ($10^6$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>kilo (k)</strong></span> <span>tisíc ($10^3$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>hekto (h)</strong></span> <span>sto ($10^2$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>Tera
+                                        (T)</strong></span> <span>bilion ($10^{12}$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>Giga
+                                        (G)</strong></span> <span>miliarda ($10^9$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>Mega
+                                        (M)</strong></span> <span>milion ($10^6$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>kilo
+                                        (k)</strong></span> <span>tisíc ($10^3$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>hekto
+                                        (h)</strong></span> <span>sto ($10^2$)</span></li>
                         </ul>
                     </div>
                     <div class="col-md-6 mt-3 mt-md-0">
                         <h5 class="text-danger">Zmenšování (Díly)</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>deci (d)</strong></span> <span>desetina ($10^{-1}$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>centi (c)</strong></span> <span>setina ($10^{-2}$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>mili (m)</strong></span> <span>tisícina ($10^{-3}$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>mikro (µ)</strong></span> <span>miliontina ($10^{-6}$)</span></li>
-                            <li class="list-group-item d-flex justify-content-between"><span><strong>nano (n)</strong></span> <span>miliardtina ($10^{-9}$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>deci
+                                        (d)</strong></span> <span>desetina ($10^{-1}$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>centi
+                                        (c)</strong></span> <span>setina ($10^{-2}$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>mili
+                                        (m)</strong></span> <span>tisícina ($10^{-3}$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>mikro
+                                        (µ)</strong></span> <span>miliontina ($10^{-6}$)</span></li>
+                            <li class="list-group-item d-flex justify-content-between"><span><strong>nano
+                                        (n)</strong></span> <span>miliardtina ($10^{-9}$)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -218,8 +335,9 @@
             <div class="ucivo-blok" data-tags="zs6 all">
                 <span class="badge-level level-zs">Základní škola (6. třída)</span>
                 <h3>4. Převody plochy a objemu (Chytáky)</h3>
-                <p>Zatímco u délky je posun o jedno místo (10), u plochy a objemu je to jinak. Musíme zohlednit počet rozměrů.</p>
-                
+                <p>Zatímco u délky je posun o jedno místo (10), u plochy a objemu je to jinak. Musíme zohlednit počet
+                    rozměrů.</p>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="formula-box" style="font-size: 1rem;">
@@ -244,13 +362,15 @@
             <div class="ucivo-blok" data-tags="ss1 all">
                 <span class="badge-level level-ss">Střední škola (1. ročník)</span>
                 <h3>5. Chyba měření</h3>
-                <p>Žádné měření není 100% přesné. Vždy uděláme malou chybu (třesoucí se ruka, nepřesné pravítko). Proto ve fyzice měříme vícekrát a počítáme průměr.</p>
-                
+                <p>Žádné měření není 100% přesné. Vždy uděláme malou chybu (třesoucí se ruka, nepřesné pravítko). Proto
+                    ve fyzice měříme vícekrát a počítáme průměr.</p>
+
                 <div class="formula-box">
                     $$ \bar{x} = \frac{x_1 + x_2 + ... + x_n}{n} $$
                 </div>
                 <p><strong>Aritmetický průměr ($\bar{x}$):</strong> Součet všech měření dělený jejich počtem.</p>
-                <p><strong>Absolutní odchylka:</strong> Rozdíl mezi naměřenou hodnotou a průměrem. $\Delta x = |x_1 - \bar{x}|$.</p>
+                <p><strong>Absolutní odchylka:</strong> Rozdíl mezi naměřenou hodnotou a průměrem. $\Delta x = |x_1 -
+                    \bar{x}|$.</p>
                 <hr class="my-5">
             </div>
 
@@ -258,12 +378,15 @@
                 <span class="badge-level level-ss">Střední škola (1. ročník)</span>
                 <h3>6. Skalární a vektorové veličiny</h3>
                 <p>Některé veličiny stačí popsat číslem. U jiných musíme znát i směr.</p>
-                
+
                 <div class="row align-items-center">
                     <div class="col-md-8">
                         <ul>
-                            <li><strong>Skalár:</strong> Veličina určená jen velikostí (číslem) a jednotkou. <br><em>Příklady: Hmotnost, čas, teplota, energie.</em></li>
-                            <li><strong>Vektor:</strong> Veličina určená velikostí, jednotkou a <strong>směrem</strong>. Značí se šipkou nad písmenem ($\vec{v}$). <br><em>Příklady: Síla, rychlost, zrychlení.</em></li>
+                            <li><strong>Skalár:</strong> Veličina určená jen velikostí (číslem) a jednotkou.
+                                <br><em>Příklady: Hmotnost, čas, teplota, energie.</em></li>
+                            <li><strong>Vektor:</strong> Veličina určená velikostí, jednotkou a <strong>směrem</strong>.
+                                Značí se šipkou nad písmenem ($\vec{v}$). <br><em>Příklady: Síla, rychlost,
+                                    zrychlení.</em></li>
                         </ul>
                     </div>
                     <div class="col-md-4 text-center">
@@ -280,24 +403,29 @@
             <div class="drill-section ucivo-blok" data-tags="zs6 ss1 all">
                 <h2> Trenažér převodů</h2>
                 <p>Tady se ukáže, jestli to opravdu umíš. Aplikace ti bude generovat nekonečno příkladů.</p>
-                
+
                 <div class="card p-4 shadow mx-auto text-dark" style="max-width: 500px;">
                     <h4 id="drill-zadani">Převeď: 5 km = ? m</h4>
-                    
+
                     <div class="d-flex justify-content-center mt-3">
-                        <input type="number" id="drill-input" class="form-control me-2" style="width: 150px;" placeholder="Výsledek">
+                        <input type="number" id="drill-input" class="form-control me-2" style="width: 150px;"
+                            placeholder="Výsledek">
                         <span id="drill-jednotka" class="input-group-text">m</span>
                     </div>
 
                     <button class="btn btn-lg btn-primary mt-3 w-100" onclick="zkontrolujDrill()">Kontrola</button>
-                    
+
                     <p id="drill-feedback" class="mt-3 fw-bold"></p>
-                    
+
                     <div class="mt-3">
-                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('delka')">Nová délka</button>
-                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('hmotnost')">Nová hmotnost</button>
-                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('cas')">Nový čas</button>
-                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('objem')">Nový objem</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('delka')">Nová
+                            délka</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('hmotnost')">Nová
+                            hmotnost</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('cas')">Nový
+                            čas</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="generujPriklad('objem')">Nový
+                            objem</button>
                     </div>
                 </div>
             </div>
@@ -311,20 +439,26 @@
             <div class="ucivo-blok" data-tags="zs6 all">
                 <span class="badge-level level-zs">ZŠ (6. třída)</span>
                 <h3>1. Z čeho je svět? (Kinetická teorie)</h3>
-                <p>Už od starého Řecka víme, že hmota není "litá", ale skládá se z maličkých drobečků – <strong>atomů</strong> a <strong>molekul</strong>. Tyto částice se neustále a neuspořádaně pohybují.</p>
-                
+                <p>Už od starého Řecka víme, že hmota není "litá", ale skládá se z maličkých drobečků –
+                    <strong>atomů</strong> a <strong>molekul</strong>. Tyto částice se neustále a neuspořádaně pohybují.
+                </p>
+
                 <div class="row mt-4 align-items-center">
                     <div class="col-md-7">
                         <h5>Důkazy pohybu částic:</h5>
                         <ul class="list-group list-group-flush mb-3">
-                            <li class="list-group-item"><strong>Brownův pohyb:</strong> Když se podíváš mikroskopem na zrnko pylu ve vodě, uvidíš, že sebou "škube". To do něj narážejí neviditelné molekuly vody.</li>
-                            <li class="list-group-item"><strong>Difuze:</strong> Samovolné promíchávání látek. Když někdo oloupe pomeranč, vůně se časem rozšíří po celé místnosti, protože částice vůně se "rozutíkají" mezi částice vzduchu.</li>
+                            <li class="list-group-item"><strong>Brownův pohyb:</strong> Když se podíváš mikroskopem na
+                                zrnko pylu ve vodě, uvidíš, že sebou "škube". To do něj narážejí neviditelné molekuly
+                                vody.</li>
+                            <li class="list-group-item"><strong>Difuze:</strong> Samovolné promíchávání látek. Když
+                                někdo oloupe pomeranč, vůně se časem rozšíří po celé místnosti, protože částice vůně se
+                                "rozutíkají" mezi částice vzduchu.</li>
                         </ul>
                     </div>
                     <div class="col-md-5 text-center">
                         <div class="p-3 bg-light border rounded">
-                           <img src="img/atom.webp" class="img-fluid" style="max-height: 200px;" alt="Model atomu">
-                           <p class="small text-muted mt-2 mb-0">Model atomu: Jádro a obal.</p>
+                            <img src="img/atom.webp" class="img-fluid" style="max-height: 200px;" alt="Model atomu">
+                            <p class="small text-muted mt-2 mb-0">Model atomu: Jádro a obal.</p>
                         </div>
                     </div>
                 </div>
@@ -335,9 +469,10 @@
             <div class="ucivo-blok" data-tags="zs6 all">
                 <span class="badge-level level-zs">ZŠ (6. třída)</span>
                 <h3>2. Hustota látek</h3>
-                <p>Proč polystyren plave na vodě, ale železo jde ke dnu? Může za to hustota. Je to vlastnost, která nám říká, jak je látka "těžká" vzhledem ke své velikosti.</p>
+                <p>Proč polystyren plave na vodě, ale železo jde ke dnu? Může za to hustota. Je to vlastnost, která nám
+                    říká, jak je látka "těžká" vzhledem ke své velikosti.</p>
                 <p>Každá látka má svou specifickou hustotu (zlato je hustší než stříbro).</p>
-                
+
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="formula-box">$$ \rho = \frac{m}{V} $$</div>
@@ -358,12 +493,14 @@
 
                 <div class="interactive-box mt-3">
                     <h4> Příklad: Zlatá cihla</h4>
-                    <p>Máš zlatou cihlu o objemu <strong>0,002 $m^3$</strong>. Hustota zlata je <strong>19 300 $kg/m^3$</strong>. Kolik cihla váží?</p>
+                    <p>Máš zlatou cihlu o objemu <strong>0,002 $m^3$</strong>. Hustota zlata je <strong>19 300
+                            $kg/m^3$</strong>. Kolik cihla váží?</p>
                     <p><em>Vzorec: $m = \rho \cdot V$</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-hustota">
                         <span class="input-group-text">kg</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-hustota', 'msg-hustota', 38.6)">Ověřit</button>
+                        <button class="btn btn-primary"
+                            onclick="zkontroluj('inp-hustota', 'msg-hustota', 38.6)">Ověřit</button>
                     </div>
                     <p id="msg-hustota"></p>
                 </div>
@@ -374,8 +511,9 @@
             <div class="ucivo-blok" data-tags="zs6 all">
                 <span class="badge-level level-zs">ZŠ (6. třída)</span>
                 <h3>3. Skupenství látek</h3>
-                <p>Látky se vyskytují ve třech (vlastně čtyřech) základních skupenstvích. To, v jakém stavu látka je, závisí na teplotě a tlaku.</p>
-                
+                <p>Látky se vyskytují ve třech (vlastně čtyřech) základních skupenstvích. To, v jakém stavu látka je,
+                    závisí na teplotě a tlaku.</p>
+
                 <div class="table-responsive">
                     <table class="table table-bordered text-center align-middle">
                         <thead class="table-light">
@@ -405,7 +543,8 @@
                     </table>
                 </div>
                 <div class="alert alert-info small">
-                    <strong>4. skupenství?</strong> Plazma (ionizovaný plyn). Tvoří 99 % vesmíru (hvězdy), na Zemi je v blesku nebo v plameni.
+                    <strong>4. skupenství?</strong> Plazma (ionizovaný plyn). Tvoří 99 % vesmíru (hvězdy), na Zemi je v
+                    blesku nebo v plameni.
                 </div>
                 <hr class="my-5">
             </div>
@@ -413,13 +552,15 @@
             <div class="ucivo-blok" data-tags="zs6 ss1 all">
                 <span class="badge-level level-zs">ZŠ + SŠ</span>
                 <h3>4. Teplota a její měření</h3>
-                <p>Co je to teplota? Je to míra <strong>pohybové energie částic</strong>. Čím rychleji částice kmitají, tím je těleso teplejší.</p>
+                <p>Co je to teplota? Je to míra <strong>pohybové energie částic</strong>. Čím rychleji částice kmitají,
+                    tím je těleso teplejší.</p>
                 <ul>
                     <li><strong>Celsiova stupnice (°C):</strong> 0 °C (tání ledu), 100 °C (var vody).</li>
                     <li><strong>Kelvinova stupnice (K):</strong> Vědecká stupnice. Začíná na absolutní nule.</li>
                 </ul>
                 <div class="alert alert-danger d-inline-block">
-                    <strong>Absolutní nula (0 K = -273,15 °C):</strong> Teplota, kdy se částice úplně zastaví. Nižší teplota ve vesmíru neexistuje.
+                    <strong>Absolutní nula (0 K = -273,15 °C):</strong> Teplota, kdy se částice úplně zastaví. Nižší
+                    teplota ve vesmíru neexistuje.
                 </div>
 
                 <div class="interactive-box mt-3">
@@ -428,7 +569,8 @@
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-kelvin">
                         <span class="input-group-text">K</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-kelvin', 'msg-kelvin', 298.15)">Ověřit</button>
+                        <button class="btn btn-primary"
+                            onclick="zkontroluj('inp-kelvin', 'msg-kelvin', 298.15)">Ověřit</button>
                     </div>
                     <p id="msg-kelvin"></p>
                 </div>
@@ -438,25 +580,30 @@
             <div class="ucivo-blok" data-tags=" ss2 all">
                 <span class="badge-level level-ss">SŠ (2. ročník)</span>
                 <h3>5. Teplo a kalorimetrická rovnice</h3>
-                <p>Teplo ($Q$) je energie, kterou si předávají tělesa s různou teplotou. Jednotkou je <strong>Joule (J)</strong>.</p>
-                <p>Kolik tepla musíme dodat, abychom ohřáli vodu na čaj? Závisí to na hmotnosti vody, na tom o kolik ji ohříváme a na materiálu.</p>
-                
+                <p>Teplo ($Q$) je energie, kterou si předávají tělesa s různou teplotou. Jednotkou je <strong>Joule
+                        (J)</strong>.</p>
+                <p>Kolik tepla musíme dodat, abychom ohřáli vodu na čaj? Závisí to na hmotnosti vody, na tom o kolik ji
+                    ohříváme a na materiálu.</p>
+
                 <div class="formula-box">
                     $$ Q = m \cdot c \cdot \Delta t $$
                 </div>
                 <ul>
-                    <li><strong>$c$</strong> = měrná tepelná kapacita (pro vodu $4180\ J \cdot kg^{-1} \cdot K^{-1}$). Říká nám, jak těžké je látku ohřát. Voda má tuto hodnotu obrovskou (dlouho chladne).</li>
+                    <li><strong>$c$</strong> = měrná tepelná kapacita (pro vodu $4180\ J \cdot kg^{-1} \cdot K^{-1}$).
+                        Říká nám, jak těžké je látku ohřát. Voda má tuto hodnotu obrovskou (dlouho chladne).</li>
                     <li><strong>$\Delta t$</strong> = rozdíl teplot.</li>
                 </ul>
 
                 <div class="interactive-box">
                     <h4> Výpočet tepla</h4>
-                    <p>Chceš ohřát <strong>2 kg</strong> vody o <strong>50 °C</strong> (z 20° na 70°). Kolik energie spotřebuješ?</p>
+                    <p>Chceš ohřát <strong>2 kg</strong> vody o <strong>50 °C</strong> (z 20° na 70°). Kolik energie
+                        spotřebuješ?</p>
                     <p><em>Výpočet: $2 \cdot 4180 \cdot 50$</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-teplo">
                         <span class="input-group-text">Joulů</span>
-                        <button class="btn btn-warning text-dark" onclick="zkontroluj('inp-teplo', 'msg-teplo', 418000)">Ověřit</button>
+                        <button class="btn btn-warning text-dark"
+                            onclick="zkontroluj('inp-teplo', 'msg-teplo', 418000)">Ověřit</button>
                     </div>
                     <p id="msg-teplo"></p>
                 </div>
@@ -466,8 +613,10 @@
             <div class="ucivo-blok" data-tags=" ss2 all">
                 <span class="badge-level level-ss">SŠ (2. ročník)</span>
                 <h3>6. Změny skupenství (Fázové přeměny)</h3>
-                <p>Když látku zahříváme, její teplota roste. Ale pozor! Když dosáhne bodu tání (nebo varu), teplota se <strong>zastaví</strong> a veškerá energie se spotřebuje na rozbití vazeb (změnu skupenství). Této energii říkáme <strong>skupenské teplo ($L$)</strong>.</p>
-                
+                <p>Když látku zahříváme, její teplota roste. Ale pozor! Když dosáhne bodu tání (nebo varu), teplota se
+                    <strong>zastaví</strong> a veškerá energie se spotřebuje na rozbití vazeb (změnu skupenství). Této
+                    energii říkáme <strong>skupenské teplo ($L$)</strong>.</p>
+
                 <div class="formula-box">$$ L = m \cdot l_t $$</div>
                 <p>Kde $l_t$ je měrné skupenské teplo (tání/varu).</p>
                 <div class="row">
@@ -486,21 +635,24 @@
             <div class="ucivo-blok" data-tags="ss2 all">
                 <span class="badge-level level-ss">SŠ (2. ročník)</span>
                 <h3>7. Ideální plyn</h3>
-                <p>Plyn je stlačitelný. Jeho stav popisujeme tlakem, objemem a teplotou. Všechny tři veličiny spojuje slavná <strong>stavová rovnice</strong>.</p>
-                
+                <p>Plyn je stlačitelný. Jeho stav popisujeme tlakem, objemem a teplotou. Všechny tři veličiny spojuje
+                    slavná <strong>stavová rovnice</strong>.</p>
+
                 <div class="formula-box">$$ p \cdot V = n \cdot R \cdot T $$</div>
                 <ul>
                     <li>$p$ = tlak (Pa), $V$ = objem ($m^3$)</li>
                     <li>$T$ = teplota (musí být v Kelvinech!)</li>
                     <li>$R$ = plynová konstanta ($8,314\ J \cdot K^{-1} \cdot mol^{-1}$)</li>
                 </ul>
-                
+
                 <div class="alert alert-secondary mt-3">
                     <strong>Děje v plynech:</strong>
                     <ul>
-                        <li><strong>Izotermický ($T=konst$):</strong> Když plyn pomalu stlačujeme, zahřívá se, ale teplo odebíráme. Platí $p \cdot V = konst$. (Boyleův zákon).</li>
+                        <li><strong>Izotermický ($T=konst$):</strong> Když plyn pomalu stlačujeme, zahřívá se, ale teplo
+                            odebíráme. Platí $p \cdot V = konst$. (Boyleův zákon).</li>
                         <li><strong>Izobarický ($p=konst$):</strong> Zahříváme plyn v balónku, ten se nafukuje.</li>
-                        <li><strong>Izochorický ($V=konst$):</strong> Zahříváme plyn v pevné láhvi. Tlak roste, až láhev bouchne.</li>
+                        <li><strong>Izochorický ($V=konst$):</strong> Zahříváme plyn v pevné láhvi. Tlak roste, až láhev
+                            bouchne.</li>
                     </ul>
                 </div>
             </div>
@@ -510,18 +662,21 @@
         <div id="mechanika" class="obsah-sekce" style="display: none;">
             <h2>Mechanika</h2>
             <div class="section-subtitle">Věda o pohybu, síle, energii a rovnováze.</div>
-            
+
 
             <div class="ucivo-blok" data-tags="zs7 all">
                 <span class="badge-level level-zs">ZŠ (7. třída)</span>
                 <h3>1. Pohyb a rychlost</h3>
-                <p>Pohyb je základní vlastností vesmíru. Všechno se hýbe – od atomů až po galaxie. Abychom mohli pohyb popsat, zavedli jsme veličinu <strong>rychlost</strong>. Ta nám říká, jakou vzdálenost urazí těleso za určitou dobu.</p>
+                <p>Pohyb je základní vlastností vesmíru. Všechno se hýbe – od atomů až po galaxie. Abychom mohli pohyb
+                    popsat, zavedli jsme veličinu <strong>rychlost</strong>. Ta nám říká, jakou vzdálenost urazí těleso
+                    za určitou dobu.</p>
                 <p>Rozlišujeme dvě rychlosti:</p>
                 <ul>
-                    <li><strong>Průměrná rychlost:</strong> Celková dráha dělená celkovým časem (např. průměrná rychlost vlaku na trase Praha-Brno).</li>
+                    <li><strong>Průměrná rychlost:</strong> Celková dráha dělená celkovým časem (např. průměrná rychlost
+                        vlaku na trase Praha-Brno).</li>
                     <li><strong>Okamžitá rychlost:</strong> To, co vidíš právě teď na tachometru v autě.</li>
                 </ul>
-                
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="formula-box">$$ v = \frac{s}{t} $$</div>
@@ -534,21 +689,24 @@
                     <div class="col-md-6">
                         <div class="alert alert-warning mt-4">
                             <strong>Jak na převody?</strong><br>
-                            Fyzikální základní jednotkou je <strong>m/s</strong>. V běžném životě ale používáme <strong>km/h</strong>.<br>
+                            Fyzikální základní jednotkou je <strong>m/s</strong>. V běžném životě ale používáme
+                            <strong>km/h</strong>.<br>
                             Platí magické číslo <strong>3,6</strong>.<br>
-                             Z m/s na km/h <strong>násobíme</strong> 3,6.<br>
-                             Z km/h na m/s <strong>dělíme</strong> 3,6.
+                            Z m/s na km/h <strong>násobíme</strong> 3,6.<br>
+                            Z km/h na m/s <strong>dělíme</strong> 3,6.
                         </div>
                     </div>
                 </div>
 
                 <div class="interactive-box">
                     <h4> Příklad: Boltův rekord</h4>
-                    <p>Legendární Usain Bolt zaběhl <strong>100 metrů</strong> za neuvěřitelných <strong>9,58 sekundy</strong>. Jaká byla jeho průměrná rychlost?</p>
+                    <p>Legendární Usain Bolt zaběhl <strong>100 metrů</strong> za neuvěřitelných <strong>9,58
+                            sekundy</strong>. Jaká byla jeho průměrná rychlost?</p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-bolt">
                         <span class="input-group-text">m/s</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-bolt', 'msg-bolt', 10.44)">Ověřit</button>
+                        <button class="btn btn-primary"
+                            onclick="zkontroluj('inp-bolt', 'msg-bolt', 10.44)">Ověřit</button>
                     </div>
                     <p id="msg-bolt"></p>
                 </div>
@@ -558,26 +716,32 @@
             <div class="ucivo-blok" data-tags="ss1 all">
                 <span class="badge-level level-ss">SŠ (1. ročník)</span>
                 <h3>2. Rovnoměrně zrychlený pohyb</h3>
-                <p>Většina pohybů v přírodě není stálá. Auto se rozjíždí, jablko padá ze stromu a zrychluje. Změnu rychlosti v čase popisuje veličina <strong>zrychlení ($a$)</strong>.</p>
-                <p>Zrychlení nám říká, o kolik m/s se zvýší rychlost za každou sekundu. Pokud má auto zrychlení $5\ m/s^2$, znamená to, že každou sekundu jede o 5 m/s rychleji než předtím.</p>
-                
+                <p>Většina pohybů v přírodě není stálá. Auto se rozjíždí, jablko padá ze stromu a zrychluje. Změnu
+                    rychlosti v čase popisuje veličina <strong>zrychlení ($a$)</strong>.</p>
+                <p>Zrychlení nám říká, o kolik m/s se zvýší rychlost za každou sekundu. Pokud má auto zrychlení $5\
+                    m/s^2$, znamená to, že každou sekundu jede o 5 m/s rychleji než předtím.</p>
+
                 <div class="formula-box">
                     $$ v = a \cdot t $$
                     $$ s = \frac{1}{2} a \cdot t^2 $$
                 </div>
-                
+
                 <div class="alert alert-info">
-                    <strong>Volný pád:</strong> Speciálním případem je pád tělesa k zemi. Zde způsobuje zrychlení gravitace Země. Značíme ho <strong>$g$</strong> a má hodnotu přibližně $9,81\ m/s^2$ (pro zjednodušení počítáme s 10).
+                    <strong>Volný pád:</strong> Speciálním případem je pád tělesa k zemi. Zde způsobuje zrychlení
+                    gravitace Země. Značíme ho <strong>$g$</strong> a má hodnotu přibližně $9,81\ m/s^2$ (pro
+                    zjednodušení počítáme s 10).
                 </div>
 
                 <div class="interactive-box">
                     <h4>Příklad: Rozjezd formule</h4>
-                    <p>Formule na startu "dupne na plyn" a má zrychlení <strong>10 $m/s^2$</strong> (což je cca 1G). Jakou dráhu ujede za první <strong>4 sekundy</strong>?</p>
+                    <p>Formule na startu "dupne na plyn" a má zrychlení <strong>10 $m/s^2$</strong> (což je cca 1G).
+                        Jakou dráhu ujede za první <strong>4 sekundy</strong>?</p>
                     <p><em>Výpočet: $s = 0,5 \cdot 10 \cdot 4^2$</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-zrychleni">
                         <span class="input-group-text">metrů</span>
-                        <button class="btn btn-warning text-dark" onclick="zkontroluj('inp-zrychleni', 'msg-zrychleni', 80)">Ověřit</button>
+                        <button class="btn btn-warning text-dark"
+                            onclick="zkontroluj('inp-zrychleni', 'msg-zrychleni', 80)">Ověřit</button>
                     </div>
                     <p id="msg-zrychleni"></p>
                 </div>
@@ -588,18 +752,21 @@
             <div class="ucivo-blok" data-tags="zs7 all">
                 <span class="badge-level level-zs">ZŠ (7. třída)</span>
                 <h3>3. Síla a Newtonovy zákony</h3>
-                <p>Proč se věci hýbou? Protože na ně působí <strong>síla ($F$)</strong>. Isaac Newton formuloval tři zákony, které řídí pohyb všeho ve vesmíru.</p>
-                
+                <p>Proč se věci hýbou? Protože na ně působí <strong>síla ($F$)</strong>. Isaac Newton formuloval tři
+                    zákony, které řídí pohyb všeho ve vesmíru.</p>
+
                 <ul class="list-group list-group-flush mt-3 mb-3">
                     <li class="list-group-item">
                         <strong>1. Zákon setrvačnosti:</strong><br>
                         Těleso chce zůstat v klidu nebo v pohybu, dokud ho něco nedonutí změnit stav. <br>
-                        <em>Příklad:</em> Proto v autě musíš mít pásy. Když auto narazí a zastaví, tvé tělo chce setrvačností letět dál dopředu.
+                        <em>Příklad:</em> Proto v autě musíš mít pásy. Když auto narazí a zastaví, tvé tělo chce
+                        setrvačností letět dál dopředu.
                     </li>
                     <li class="list-group-item">
                         <strong>3. Zákon akce a reakce:</strong><br>
                         Každá síla vyvolá stejně velkou sílu opačného směru. Síly působí vždy ve dvojicích.<br>
-                        <em>Příklad:</em> Když raketa chrlí plyny dolů (akce), plyny tlačí raketu nahoru (reakce). Bez tohoto zákona bychom se neodlepili od země.
+                        <em>Příklad:</em> Když raketa chrlí plyny dolů (akce), plyny tlačí raketu nahoru (reakce). Bez
+                        tohoto zákona bychom se neodlepili od země.
                     </li>
                 </ul>
                 <hr class="my-5">
@@ -616,15 +783,17 @@
                 </ul>
                 </p>
                 <div class="formula-box">$$ \vec{F} = m \cdot \vec{a} $$</div>
-                
+
                 <div class="interactive-box">
                     <h4> Příklad: Kamion vs. Osobák</h4>
-                    <p>Motor kamionu o hmotnosti <strong>10 000 kg</strong> dokáže vyvinout tažnou sílu <strong>20 000 N</strong>. Jaké bude jeho zrychlení?</p>
+                    <p>Motor kamionu o hmotnosti <strong>10 000 kg</strong> dokáže vyvinout tažnou sílu <strong>20 000
+                            N</strong>. Jaké bude jeho zrychlení?</p>
                     <p><em>Vzorec: $a = F / m$</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-newton">
                         <span class="input-group-text">$m/s^2$</span>
-                        <button class="btn btn-warning text-dark" onclick="zkontroluj('inp-newton', 'msg-newton', 2)">Ověřit</button>
+                        <button class="btn btn-warning text-dark"
+                            onclick="zkontroluj('inp-newton', 'msg-newton', 2)">Ověřit</button>
                     </div>
                     <p id="msg-newton"></p>
                 </div>
@@ -635,9 +804,12 @@
             <div class="ucivo-blok" data-tags="zs7 all">
                 <span class="badge-level level-zs">ZŠ (7. třída)</span>
                 <h3>5. Jednoduché stroje: Páka</h3>
-                <p>Lidé jsou slabí, ale chytří. Vymysleli jsme stroje, které nám šetří sílu. Jedním z nejstarších je <strong>páka</strong>.</p>
-                <p>Archimedes řekl: <em>"Dejte mi pevný bod a pohnu Zemí."</em> Princip je jednoduchý: Čím delší máš rameno páky, tím menší sílu potřebuješ na zvednutí těžkého břemene. Nevýhodou je, že musíš tou pákou pohnout o velký kus.</p>
-                
+                <p>Lidé jsou slabí, ale chytří. Vymysleli jsme stroje, které nám šetří sílu. Jedním z nejstarších je
+                    <strong>páka</strong>.</p>
+                <p>Archimedes řekl: <em>"Dejte mi pevný bod a pohnu Zemí."</em> Princip je jednoduchý: Čím delší máš
+                    rameno páky, tím menší sílu potřebuješ na zvednutí těžkého břemene. Nevýhodou je, že musíš tou pákou
+                    pohnout o velký kus.</p>
+
                 <div class="row align-items-center mt-4">
                     <div class="col-md-6">
                         <div class="formula-box" style="font-size: 1rem;">$$ F_1 \cdot a_1 = F_2 \cdot a_2 $$</div>
@@ -649,7 +821,9 @@
 
                 <div class="interactive-box mt-3">
                     <h4> Příklad: Houpačka</h4>
-                    <p>Na jedné straně houpačky sedí tatínek (<strong>100 kg</strong>) ve vzdálenosti <strong>1 metr</strong> od středu. Jak daleko si musí sednout syn (<strong>25 kg</strong>), aby tatínka vyvážil?</p>
+                    <p>Na jedné straně houpačky sedí tatínek (<strong>100 kg</strong>) ve vzdálenosti <strong>1
+                            metr</strong> od středu. Jak daleko si musí sednout syn (<strong>25 kg</strong>), aby
+                        tatínka vyvážil?</p>
                     <p><em>Úvaha: Syn je 4x lehčí, takže musí mít 4x delší páku.</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-paka">
@@ -665,10 +839,13 @@
             <div class="ucivo-blok" data-tags="ss2 zs8 all">
                 <span class="badge-level level-ss">SŠ + ZŠ (8. tř)</span>
                 <h3>6. Mechanická práce a energie</h3>
-                <p>Pozor! Ve fyzice slovo "práce" znamená něco jiného než v životě. Držet těžkou tašku a potit se <strong>není práce</strong> (ve fyzikálním smyslu), protože se taška nehýbe.</p>
-                <p><strong>Práce ($W$)</strong> se koná pouze tehdy, když síla pohybuje tělesem po nějaké dráze. Jednotkou je <strong>Joule (J)</strong>.</p>
-                <p><strong>Výkon ($P$)</strong> nám pak říká, jak rychle jsme tu práci stihli udělat. Silný motor auta udělá stejnou práci (vyjede na kopec) rychleji než slabý motor.</p>
-                
+                <p>Pozor! Ve fyzice slovo "práce" znamená něco jiného než v životě. Držet těžkou tašku a potit se
+                    <strong>není práce</strong> (ve fyzikálním smyslu), protože se taška nehýbe.</p>
+                <p><strong>Práce ($W$)</strong> se koná pouze tehdy, když síla pohybuje tělesem po nějaké dráze.
+                    Jednotkou je <strong>Joule (J)</strong>.</p>
+                <p><strong>Výkon ($P$)</strong> nám pak říká, jak rychle jsme tu práci stihli udělat. Silný motor auta
+                    udělá stejnou práci (vyjede na kopec) rychleji než slabý motor.</p>
+
                 <div class="row">
                     <div class="col-md-6">
                         <h6>Práce:</h6>
@@ -682,11 +859,13 @@
 
                 <div class="interactive-box mt-3">
                     <h4> Příklad: Výtah</h4>
-                    <p>Motor výtahu musí zvednout kabinu o hmotnosti <strong>500 kg</strong> (tíha $F_g \approx 5000\ N$). Vyjede do výšky <strong>10 m</strong>. Kolik práce motor vykonal?</p>
+                    <p>Motor výtahu musí zvednout kabinu o hmotnosti <strong>500 kg</strong> (tíha $F_g \approx 5000\
+                        N$). Vyjede do výšky <strong>10 m</strong>. Kolik práce motor vykonal?</p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-prace">
                         <span class="input-group-text">Joulů</span>
-                        <button class="btn btn-warning text-dark" onclick="zkontroluj('inp-prace', 'msg-prace', 50000)">Ověřit</button>
+                        <button class="btn btn-warning text-dark"
+                            onclick="zkontroluj('inp-prace', 'msg-prace', 50000)">Ověřit</button>
                     </div>
                     <p id="msg-prace"></p>
                 </div>
@@ -697,22 +876,27 @@
             <div class="ucivo-blok" data-tags="zs7 all">
                 <span class="badge-level level-zs">ZŠ (7. třída)</span>
                 <h3>7. Tlak v kapalinách (Hydrostatika)</h3>
-                <p>Voda má svou hmotnost. Když se potopíš, všechna voda nad tebou na tebe tlačí svou vahou. Tomu říkáme <strong>hydrostatický tlak</strong>.</p>
+                <p>Voda má svou hmotnost. Když se potopíš, všechna voda nad tebou na tebe tlačí svou vahou. Tomu říkáme
+                    <strong>hydrostatický tlak</strong>.</p>
                 <p>Závisí na dvou věcech:</p>
                 <ol>
-                    <li><strong>Hloubka ($h$):</strong> Čím jsi hlouběji, tím větší tlak. (V Mariánském příkopu by tě tlak rozdrtil jako plechovku).</li>
-                    <li><strong>Hustota kapaliny ($\rho$):</strong> Ve slané vodě je tlak větší než ve sladké, ve rtuti by byl obrovský.</li>
+                    <li><strong>Hloubka ($h$):</strong> Čím jsi hlouběji, tím větší tlak. (V Mariánském příkopu by tě
+                        tlak rozdrtil jako plechovku).</li>
+                    <li><strong>Hustota kapaliny ($\rho$):</strong> Ve slané vodě je tlak větší než ve sladké, ve rtuti
+                        by byl obrovský.</li>
                 </ol>
                 <div class="formula-box">$$ p_h = h \cdot \rho \cdot g $$</div>
-                
+
                 <div class="interactive-box">
                     <h4>Hlubokomořský ponor</h4>
-                    <p>Ponorka je v hloubce <strong>100 m</strong>. Hustota mořské vody je cca <strong>1000 kg/m³</strong>. Jaký tlak působí na trup? ($g=10$)</p>
+                    <p>Ponorka je v hloubce <strong>100 m</strong>. Hustota mořské vody je cca <strong>1000
+                            kg/m³</strong>. Jaký tlak působí na trup? ($g=10$)</p>
                     <p><em>Výpočet: $100 \cdot 1000 \cdot 10$</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-tlak">
                         <span class="input-group-text">Pa</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-tlak', 'msg-tlak', 1000000)">Ověřit</button>
+                        <button class="btn btn-primary"
+                            onclick="zkontroluj('inp-tlak', 'msg-tlak', 1000000)">Ověřit</button>
                     </div>
                     <p id="msg-tlak"></p>
                 </div>
@@ -727,13 +911,15 @@
             <div class="ucivo-blok" data-tags="zs7 all">
                 <span class="badge-level level-zs">ZŠ (7. třída)</span>
                 <h3>1. Šíření světla a stín</h3>
-                <p>Světlo je elektromagnetické vlnění, které vnímáme okem. V homogenním prostředí (vzduch, vakuum) se šíří <strong>přímočaře</strong> (rovně).</p>
+                <p>Světlo je elektromagnetické vlnění, které vnímáme okem. V homogenním prostředí (vzduch, vakuum) se
+                    šíří <strong>přímočaře</strong> (rovně).</p>
                 <p>Díky tomu, že světlo "neuhne", vzniká za překážkou <strong>stín</strong>.</p>
-                
+
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <ul>
-                            <li><strong>Rychlost světla ($c$):</strong> 300 000 km/s (ve vakuu). Je to nejvyšší možná rychlost ve vesmíru.</li>
+                            <li><strong>Rychlost světla ($c$):</strong> 300 000 km/s (ve vakuu). Je to nejvyšší možná
+                                rychlost ve vesmíru.</li>
                             <li><strong>Zdroj světla:</strong> Slunce, žárovka, oheň.</li>
                             <li><strong>Osvětlené těleso:</strong> Měsíc, stůl (jen odráží světlo).</li>
                         </ul>
@@ -741,20 +927,22 @@
                     <div class="col-md-6">
                         <div class="alert alert-info">
                             <strong>Zatmění:</strong><br>
-                             <strong>Slunce:</strong> Měsíc stíní Slunce (je mezi Zemí a Sluncem).<br>
-                             <strong>Měsíce:</strong> Země stíní Měsíc (je mezi Sluncem a Měsícem).
+                            <strong>Slunce:</strong> Měsíc stíní Slunce (je mezi Zemí a Sluncem).<br>
+                            <strong>Měsíce:</strong> Země stíní Měsíc (je mezi Sluncem a Měsícem).
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="interactive-box">
                     <h4> Příklad: Jak daleko je Měsíc?</h4>
-                    <p>Laserový paprsek ze Země se odrazí od zrcadla na Měsíci a vrátí se za <strong>2,56 sekundy</strong>. Jak daleko je Měsíc? (Cesta tam trvala polovinu času!)</p>
+                    <p>Laserový paprsek ze Země se odrazí od zrcadla na Měsíci a vrátí se za <strong>2,56
+                            sekundy</strong>. Jak daleko je Měsíc? (Cesta tam trvala polovinu času!)</p>
                     <p><em>Vzorec: $s = c \cdot t$ (pozor na čas cesty jen tam)</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-mesic">
                         <span class="input-group-text">km</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-mesic', 'msg-mesic', 384000)">Ověřit</button>
+                        <button class="btn btn-primary"
+                            onclick="zkontroluj('inp-mesic', 'msg-mesic', 384000)">Ověřit</button>
                     </div>
                     <p id="msg-mesic"></p>
                 </div>
@@ -765,7 +953,7 @@
                 <span class="badge-level level-zs">ZŠ + SŠ</span>
                 <h3>2. Odraz světla (Zákon odrazu)</h3>
                 <p>Když se podíváš do zrcadla, vidíš se díky odrazu. Platí jednoduchý zákon:</p>
-                
+
                 <div class="formula-box text-center">
                     Úhel odrazu = Úhel dopadu <br>
                     $$ \alpha' = \alpha $$
@@ -773,19 +961,30 @@
 
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <p>Paprsek se odrazí pod stejným úhlem, pod jakým dopadl. Úhly měříme od <strong>kolmice</strong> dopadu!</p>
+                        <p>Paprsek se odrazí pod stejným úhlem, pod jakým dopadl. Úhly měříme od
+                            <strong>kolmice</strong> dopadu!</p>
                         <ul>
-                            <li><strong>Rovinné zrcadlo:</strong> Obraz je stejně velký, stranově převrácený a zdánlivý (za zrcadlem).</li>
+                            <li><strong>Rovinné zrcadlo:</strong> Obraz je stejně velký, stranově převrácený a zdánlivý
+                                (za zrcadlem).</li>
                             <li><strong>Duté zrcadlo:</strong> Zvětšuje (kosmetické zrcátko).</li>
-                            <li><strong>Vypuklé zrcadlo:</strong> Zmenšuje, ale vidí do šířky (zrcadla v křižovatkách).</li>
+                            <li><strong>Vypuklé zrcadlo:</strong> Zmenšuje, ale vidí do šířky (zrcadla v křižovatkách).
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-4 text-center">
-                        <div style="border-bottom: 5px solid silver; height: 100px; position: relative; width: 100%; background: linear-gradient(to bottom, transparent 95%, rgba(0,0,0,0.1) 100%);">
-                            <div style="position: absolute; bottom:5px; width: 100%; text-align: center; color: gray;"> Zrcadlo</div>
-                            <div style="position: absolute; bottom:0; left: 50%; width: 2px; height: 80px; background: black; border-left: 1px dashed white;"></div>
-                            <div style="position: absolute; bottom:0; left: 50%; width: 3px; height: 100px; background: red; transform-origin: bottom center; transform: rotate(30deg);"></div>
-                            <div style="position: absolute; bottom:0; left: 50%; width: 3px; height: 100px; background: red; transform-origin: bottom center; transform: rotate(-30deg);"></div>
+                        <div
+                            style="border-bottom: 5px solid silver; height: 100px; position: relative; width: 100%; background: linear-gradient(to bottom, transparent 95%, rgba(0,0,0,0.1) 100%);">
+                            <div style="position: absolute; bottom:5px; width: 100%; text-align: center; color: gray;">
+                                Zrcadlo</div>
+                            <div
+                                style="position: absolute; bottom:0; left: 50%; width: 2px; height: 80px; background: black; border-left: 1px dashed white;">
+                            </div>
+                            <div
+                                style="position: absolute; bottom:0; left: 50%; width: 3px; height: 100px; background: red; transform-origin: bottom center; transform: rotate(30deg);">
+                            </div>
+                            <div
+                                style="position: absolute; bottom:0; left: 50%; width: 3px; height: 100px; background: red; transform-origin: bottom center; transform: rotate(-30deg);">
+                            </div>
                         </div>
                         <small>Schéma odrazu ($\alpha = \alpha'$)</small>
                     </div>
@@ -796,8 +995,9 @@
             <div class="ucivo-blok" data-tags="zs7 ss3 all">
                 <span class="badge-level level-ss">SŠ (3. ročník)</span>
                 <h3>3. Lom světla a Index lomu</h3>
-                <p>Když světlo vletí do hustšího prostředí (voda, sklo), <strong>zpomalí se</strong>. Kvůli tomu se paprsek zlomí ("Lžička ve vodě vypadá zlomená").</p>
-                
+                <p>Když světlo vletí do hustšího prostředí (voda, sklo), <strong>zpomalí se</strong>. Kvůli tomu se
+                    paprsek zlomí ("Lžička ve vodě vypadá zlomená").</p>
+
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="formula-box">$$ n = \frac{c}{v} $$</div>
@@ -809,7 +1009,7 @@
                         <p>Čím větší index lomu, tím víc látka "láme" světlo (diamant má $n=2,4$).</p>
                     </div>
                     <div class="col-md-6 text-center">
-                        
+
 
                         <img src="img/lightspectrum.png" class="img-fluid rounded shadow-sm" alt="Lom světla hranolem">
                         <p class="small text-muted mt-2">Bílé světlo se láme a rozkládá na duhu.</p>
@@ -818,12 +1018,14 @@
 
                 <div class="interactive-box">
                     <h4> Příklad: Rychlost v diamantu</h4>
-                    <p>Diamant má index lomu <strong>2,4</strong>. Rychlost světla ve vakuu je <strong>300 000 km/s</strong>. Jakou rychlostí se světlo plouží uvnitř diamantu?</p>
+                    <p>Diamant má index lomu <strong>2,4</strong>. Rychlost světla ve vakuu je <strong>300 000
+                            km/s</strong>. Jakou rychlostí se světlo plouží uvnitř diamantu?</p>
                     <p><em>Vzorec: $v = c / n$</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-lom">
                         <span class="input-group-text">km/s</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-lom', 'msg-lom', 125000)">Ověřit</button>
+                        <button class="btn btn-primary"
+                            onclick="zkontroluj('inp-lom', 'msg-lom', 125000)">Ověřit</button>
                     </div>
                     <p id="msg-lom"></p>
                 </div>
@@ -848,7 +1050,8 @@
                 <p>Kde se vytvoří obraz? Počítáme to pomocí <strong>zobrazovací rovnice</strong>:</p>
                 <div class="formula-box">$$ \frac{1}{f} = \frac{1}{a} + \frac{1}{a'} $$</div>
                 <ul>
-                    <li><strong>f</strong> = ohnisková vzdálenost (v metrech) -> převrácená hodnota jsou <strong>Dioptrie</strong> ($D = 1/f$).</li>
+                    <li><strong>f</strong> = ohnisková vzdálenost (v metrech) -> převrácená hodnota jsou
+                        <strong>Dioptrie</strong> ($D = 1/f$).</li>
                     <li><strong>a</strong> = vzdálenost předmětu od čočky.</li>
                     <li><strong>a'</strong> = vzdálenost obrazu (kam dát promítací plátno).</li>
                 </ul>
@@ -860,7 +1063,8 @@
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-dioptrie">
                         <span class="input-group-text">D</span>
-                        <button class="btn btn-warning text-dark" onclick="zkontroluj('inp-dioptrie', 'msg-dioptrie', 2)">Ověřit</button>
+                        <button class="btn btn-warning text-dark"
+                            onclick="zkontroluj('inp-dioptrie', 'msg-dioptrie', 2)">Ověřit</button>
                     </div>
                     <p id="msg-dioptrie"></p>
                 </div>
@@ -902,7 +1106,8 @@
             <div class="ucivo-blok" data-tags="zs8 all">
                 <span class="badge-level level-zs">Základní škola (8. třída)</span>
                 <h3>1. Elektrický náboj a pole</h3>
-                <p>Všechna tělesa jsou složena z atomů. Atom má kladné jádro (+) a záporný obal (-). Elektrický náboj je vlastnost částic, která způsobuje silové působení.</p>
+                <p>Všechna tělesa jsou složena z atomů. Atom má kladné jádro (+) a záporný obal (-). Elektrický náboj je
+                    vlastnost částic, která způsobuje silové působení.</p>
                 <ul>
                     <li><strong>Souhlasné náboje</strong> (+ a +) nebo (- a -) se odpuzují.</li>
                     <li><strong>Nesouhlasné náboje</strong> (+ a -) se přitahují.</li>
@@ -914,8 +1119,9 @@
             <div class="ucivo-blok" data-tags="zs8 ss2 all">
                 <span class="badge-level level-zs">ZŠ + SŠ</span>
                 <h3>2. Ohmův zákon</h3>
-                <p>Toto je nejdůležitější zákon elektrotechniky. Popisuje vztah mezi napětím, proudem a odporem v obvodu.</p>
-                
+                <p>Toto je nejdůležitější zákon elektrotechniky. Popisuje vztah mezi napětím, proudem a odporem v
+                    obvodu.</p>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="formula-box">$$ I = \frac{U}{R} $$</div>
@@ -937,11 +1143,13 @@
 
                 <div class="interactive-box">
                     <h4>Výpočet proudu</h4>
-                    <p>Máme zdroj napětí <strong>24 V</strong> a připojíme k němu rezistor o odporu <strong>6 Ω</strong>. Jaký proud bude obvodem protékat?</p>
+                    <p>Máme zdroj napětí <strong>24 V</strong> a připojíme k němu rezistor o odporu <strong>6
+                            Ω</strong>. Jaký proud bude obvodem protékat?</p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-ohm">
                         <span class="input-group-text">A</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-ohm', 'msg-ohm', 4)">Ověřit výsledek</button>
+                        <button class="btn btn-primary" onclick="zkontroluj('inp-ohm', 'msg-ohm', 4)">Ověřit
+                            výsledek</button>
                     </div>
                     <p id="msg-ohm"></p>
                 </div>
@@ -951,18 +1159,14 @@
             <div class="ucivo-blok" data-tags="zs8 ss2 all">
                 <span class="badge-level level-zs">ZŠ + SŠ</span>
                 <h3>3. Sériové a paralelní zapojení</h3>
-                <p>V obvodech můžeme součástky zapojit dvěma základními způsoby. To zásadně ovlivní celkový odpor a chování obvodu.</p>
+                <p>V obvodech můžeme součástky zapojit dvěma základními způsoby. To zásadně ovlivní celkový odpor a
+                    chování obvodu.</p>
 
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title text-primary">Sériové zapojení (Za sebou)</h5>
-                                
-
-
-
-                                
                                 <p>Proud je všude stejný. Celkový odpor se sčítá.</p>
                                 <div class="formula-box fs-6 p-2">$$ R = R_1 + R_2 $$</div>
                             </div>
@@ -973,13 +1177,9 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title text-success">Paralelní zapojení (Vedle sebe)</h5>
-                                
-
-
-
-                                
                                 <p>Napětí je všude stejné. Proud se větví. Celkový odpor se zmenšuje.</p>
-                                <div class="formula-box fs-6 p-2">$$ \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} $$</div>
+                                <div class="formula-box fs-6 p-2">$$ \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} $$
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -987,11 +1187,13 @@
 
                 <div class="interactive-box mt-4">
                     <h4>Příklad: Sériové zapojení</h4>
-                    <p>Máš dva rezistory zapojené za sebou. První má odpor $100\ \Omega$, druhý $50\ \Omega$. Jaký je výsledný odpor?</p>
+                    <p>Máš dva rezistory zapojené za sebou. První má odpor $100\ \Omega$, druhý $50\ \Omega$. Jaký je
+                        výsledný odpor?</p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-serie">
                         <span class="input-group-text">Ω</span>
-                        <button class="btn btn-primary" onclick="zkontroluj('inp-serie', 'msg-serie', 150)">Ověřit výsledek</button>
+                        <button class="btn btn-primary" onclick="zkontroluj('inp-serie', 'msg-serie', 150)">Ověřit
+                            výsledek</button>
                     </div>
                     <p id="msg-serie"></p>
                 </div>
@@ -1003,15 +1205,18 @@
                 <h3>4. Elektrická práce a výkon</h3>
                 <p>Elektrický proud koná práci (roztočí motor, zahřeje plotýnku). Za tuto práci platíme elektrárnám.</p>
                 <div class="formula-box">$$ P = U \cdot I $$</div>
-                <p>Výkon ($P$) měříme ve Wattech (W). Elektrická práce ($E$ nebo $W$) je výkon krát čas ($E = P \cdot t$).</p>
+                <p>Výkon ($P$) měříme ve Wattech (W). Elektrická práce ($E$ nebo $W$) je výkon krát čas ($E = P \cdot
+                    t$).</p>
 
                 <div class="interactive-box">
                     <h4>Výpočet výkonu</h4>
-                    <p>Nabíječka dává napětí <strong>5 V</strong> a teče jí proud <strong>2 A</strong>. Jaký má výkon?</p>
+                    <p>Nabíječka dává napětí <strong>5 V</strong> a teče jí proud <strong>2 A</strong>. Jaký má výkon?
+                    </p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-vykon">
                         <span class="input-group-text">W</span>
-                        <button class="btn btn-warning text-dark" onclick="zkontroluj('inp-vykon', 'msg-vykon', 10)">Ověřit výsledek</button>
+                        <button class="btn btn-warning text-dark"
+                            onclick="zkontroluj('inp-vykon', 'msg-vykon', 10)">Ověřit výsledek</button>
                     </div>
                     <p id="msg-vykon"></p>
                 </div>
@@ -1021,8 +1226,9 @@
             <div class="ucivo-blok" data-tags="ss2 all">
                 <span class="badge-level level-ss">Střední škola (2. ročník)</span>
                 <h3>5. Coulombův zákon</h3>
-                <p>Tento zákon popisuje velikost elektrické síly mezi dvěma bodovými náboji. Je matematicky velmi podobný Newtonovu gravitačnímu zákonu.</p>
-                
+                <p>Tento zákon popisuje velikost elektrické síly mezi dvěma bodovými náboji. Je matematicky velmi
+                    podobný Newtonovu gravitačnímu zákonu.</p>
+
                 <div class="formula-box">
                     $$ F_e = k \cdot \frac{|Q_1 \cdot Q_2|}{r^2} $$
                 </div>
@@ -1034,12 +1240,14 @@
 
                 <div class="interactive-box">
                     <h4>Logická úloha</h4>
-                    <p>Pokud <strong>zvětším vzdálenost</strong> mezi dvěma náboji <strong>2x</strong> (např. z 1 metru na 2 metry), co se stane s elektrickou silou?</p>
+                    <p>Pokud <strong>zvětším vzdálenost</strong> mezi dvěma náboji <strong>2x</strong> (např. z 1 metru
+                        na 2 metry), co se stane s elektrickou silou?</p>
                     <p><em>Nápověda: Ve jmenovateli zlomku je $r^2$. Když dosadíš 2, umocní se to na $2^2$.</em></p>
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <span class="input-group-text">Síla bude</span>
                         <input type="number" class="form-control" id="inp-coulomb" placeholder="Kolikrát menší?">
-                        <button class="btn btn-dark" onclick="zkontroluj('inp-coulomb', 'msg-coulomb', 4)">Ověřit</button>
+                        <button class="btn btn-dark"
+                            onclick="zkontroluj('inp-coulomb', 'msg-coulomb', 4)">Ověřit</button>
                     </div>
                     <p id="msg-coulomb"></p>
                 </div>
@@ -1050,13 +1258,14 @@
                 <span class="badge-level level-ss">Střední škola (3. ročník)</span>
                 <h3>6. Kirchhoffovy zákony</h3>
                 <p>Pro řešení složitějších elektrických sítí (kde jsou uzly a smyčky) používáme dva základní zákony.</p>
-                
+
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <h5>1. Zákon o uzlech (Proudy)</h5>
                         <div class="alert alert-light border">
                             $$ \sum I = 0 $$
-                            Součet proudů přitékajících do uzlu se rovná součtu proudů vytékajících. Proud se nikde neztrácí ani nehromadí.
+                            Součet proudů přitékajících do uzlu se rovná součtu proudů vytékajících. Proud se nikde
+                            neztrácí ani nehromadí.
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -1078,8 +1287,9 @@
             <div class="ucivo-blok" data-tags="zs9 all">
                 <span class="badge-level level-zs">ZŠ (9. třída)</span>
                 <h3>1. Sluneční soustava</h3>
-                <p>Naše soustava vznikla před cca 4,6 miliardami let z obrovského oblaku prachu a plynu. Uprostřed se zažehlo Slunce (hvězda) a ze zbytků vznikly planety.</p>
-                
+                <p>Naše soustava vznikla před cca 4,6 miliardami let z obrovského oblaku prachu a plynu. Uprostřed se
+                    zažehlo Slunce (hvězda) a ze zbytků vznikly planety.</p>
+
                 <div class="row mt-4 align-items-center">
                     <div class="col-md-12 text-center mb-4">
                         <img src="img/solarsystem.png" class="img-fluid rounded shadow-sm" alt="Sluneční soustava">
@@ -1089,7 +1299,8 @@
                         <p>Jsou blízko Slunce, malé, pevné a mají málo měsíců.</p>
                         <ul>
                             <li><strong>Merkur:</strong> Extrémní výkyvy teplot, bez atmosféry.</li>
-                            <li><strong>Venuše:</strong> "Sestra Země", ale pekelně horká (skleníkový efekt, 460 °C).</li>
+                            <li><strong>Venuše:</strong> "Sestra Země", ale pekelně horká (skleníkový efekt, 460 °C).
+                            </li>
                             <li><strong>Země:</strong> Jediná s tekutou vodou a životem.</li>
                             <li><strong>Mars:</strong> Poloviční velikost Země, dříve tam tekla voda.</li>
                         </ul>
@@ -1114,10 +1325,12 @@
                 <p>Pozor na rozdíl mezi <strong>hmotností</strong> a <strong>tíhou</strong>.</p>
                 <ul>
                     <li><strong>Hmotnost (kg):</strong> Je pořád stejná. Jsi to "ty" (počet atomů tvého těla).</li>
-                    <li><strong>Tíha (N):</strong> Síla, kterou tě planeta táhne k zemi. Závisí na gravitaci planety.</li>
+                    <li><strong>Tíha (N):</strong> Síla, kterou tě planeta táhne k zemi. Závisí na gravitaci planety.
+                    </li>
                 </ul>
-                <p>Na Měsíci jsi "lehčí" (tíha je 6x menší), ale hmotnost máš stejnou (pokud do tebe někdo narazí, bolí to stejně jako na Zemi).</p>
-                
+                <p>Na Měsíci jsi "lehčí" (tíha je 6x menší), ale hmotnost máš stejnou (pokud do tebe někdo narazí, bolí
+                    to stejně jako na Zemi).</p>
+
                 <div class="interactive-box">
                     <h4> Vesmírná váha</h4>
                     <label>Tvoje hmotnost na Zemi (kg):</label>
@@ -1133,15 +1346,18 @@
             <div class="ucivo-blok" data-tags="ss4 all">
                 <span class="badge-level level-ss">SŠ (4. ročník)</span>
                 <h3>3. Keplerovy zákony (Nebeská mechanika)</h3>
-                <p>Johannes Kepler (působil v Praze!) na základě pozorování Tychona Braha zjistil, že planety se nepohybují v kruzích, jak se myslelo, ale složitěji.</p>
-                
+                <p>Johannes Kepler (působil v Praze!) na základě pozorování Tychona Braha zjistil, že planety se
+                    nepohybují v kruzích, jak se myslelo, ale složitěji.</p>
+
                 <div class="row mb-4">
                     <div class="col-md-7">
                         <div class="alert alert-light border-start border-primary border-4">
                             <strong>1. Zákon (O drahách):</strong><br>
-                            Planety obíhají kolem Slunce po <strong>elipsách</strong>, málo odlišných od kružnic, v jejichž jednom společném ohnisku je Slunce.
+                            Planety obíhají kolem Slunce po <strong>elipsách</strong>, málo odlišných od kružnic, v
+                            jejichž jednom společném ohnisku je Slunce.
                         </div>
-                        <p class="small text-muted">Důsledek: Vzdálenost planety od Slunce se mění. Bod nejblíže Slunci je <em>přísluní (perihelium)</em>, bod nejdále je <em>odsluní (afelium)</em>.</p>
+                        <p class="small text-muted">Důsledek: Vzdálenost planety od Slunce se mění. Bod nejblíže Slunci
+                            je <em>přísluní (perihelium)</em>, bod nejdále je <em>odsluní (afelium)</em>.</p>
                     </div>
                     <div class="col-md-5 text-center">
                         <img src="img/kepler.png" class="img-fluid rounded border p-2" alt="Keplerův zákon">
@@ -1152,20 +1368,24 @@
                     <strong>2. Zákon (O plochách):</strong><br>
                     Obsahy ploch opsaných průvodičem planety za stejný čas jsou stejné.
                 </div>
-                <p><strong>Lidsky řečeno:</strong> Planeta se nepohybuje stále stejně rychle. Když je blízko Slunce (v přísluní), letí <strong>nejrychleji</strong>. Když je daleko, letí <strong>nejpomaleji</strong>.</p>
+                <p><strong>Lidsky řečeno:</strong> Planeta se nepohybuje stále stejně rychle. Když je blízko Slunce (v
+                    přísluní), letí <strong>nejrychleji</strong>. Když je daleko, letí <strong>nejpomaleji</strong>.</p>
 
                 <div class="alert alert-light border-start border-primary border-4 mb-4">
                     <strong>3. Zákon (O dobách oběhu):</strong><br>
-                    Poměr druhých mocnin oběžných dob dvou planet se rovná poměru třetích mocnin jejich hlavních poloos (vzdáleností).
+                    Poměr druhých mocnin oběžných dob dvou planet se rovná poměru třetích mocnin jejich hlavních poloos
+                    (vzdáleností).
                     $$ \frac{T_1^2}{T_2^2} = \frac{a_1^3}{a_2^3} $$
                 </div>
-                <p><strong>Lidsky řečeno:</strong> Čím je planeta dál od Slunce, tím déle jí trvá jeden rok. (Merkur oběhne za 88 dní, Neptun za 165 let!).</p>
+                <p><strong>Lidsky řečeno:</strong> Čím je planeta dál od Slunce, tím déle jí trvá jeden rok. (Merkur
+                    oběhne za 88 dní, Neptun za 165 let!).</p>
 
                 <div class="interactive-box mt-3">
                     <h4>Keplerova kalkulačka</h4>
-                    <p>Představ si planetu, která je <strong>4x dál</strong> od Slunce než Země ($a=4 AU$). Jak dlouho jí potrvá oběh?</p>
+                    <p>Představ si planetu, která je <strong>4x dál</strong> od Slunce než Země ($a=4 AU$). Jak dlouho
+                        jí potrvá oběh?</p>
                     <p><em>Vzorec: $T = \sqrt{a^3} = \sqrt{4^3} = \sqrt{64} = ?$</em></p>
-                    
+
                     <div class="input-group mb-2" style="max-width: 300px;">
                         <input type="number" class="form-control" id="inp-kepler" placeholder="Vzdálenost (AU)">
                         <span class="input-group-text">let</span>
@@ -1179,20 +1399,24 @@
             <div class="ucivo-blok" data-tags="ss1 ss4 all">
                 <span class="badge-level level-ss">SŠ (1. a 4. ročník)</span>
                 <h3>4. Newtonův gravitační zákon</h3>
-                <p>Kepler popsal <em>jak</em> se planety hýbou, ale Isaac Newton vysvětlil <em>proč</em>. Může za to gravitační síla.</p>
-                <p>Každá dvě tělesa ve vesmíru se přitahují silou. Nezáleží na tom, jestli je to Země a Měsíc, nebo dvě jablka na stole (tam je síla jen extrémně malá).</p>
-                
+                <p>Kepler popsal <em>jak</em> se planety hýbou, ale Isaac Newton vysvětlil <em>proč</em>. Může za to
+                    gravitační síla.</p>
+                <p>Každá dvě tělesa ve vesmíru se přitahují silou. Nezáleží na tom, jestli je to Země a Měsíc, nebo dvě
+                    jablka na stole (tam je síla jen extrémně malá).</p>
+
                 <div class="formula-box">
                     $$ F_g = \kappa \frac{M \cdot m}{r^2} $$
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <strong>Čitatel ($M \cdot m$):</strong><br>
-                        Síla je přímo úměrná hmotnostem. Čím těžší tělesa, tím větší síla. (Země nás přitahuje hodně, jablko málo).
+                        Síla je přímo úměrná hmotnostem. Čím těžší tělesa, tím větší síla. (Země nás přitahuje hodně,
+                        jablko málo).
                     </div>
                     <div class="col-md-6">
                         <strong>Jmenovatel ($r^2$):</strong><br>
-                        Síla klesá s <strong>druhou mocninou</strong> vzdálenosti. Když se vzdálíš 2x, síla klesne 4x. Když se vzdálíš 3x, síla klesne 9x!
+                        Síla klesá s <strong>druhou mocninou</strong> vzdálenosti. Když se vzdálíš 2x, síla klesne 4x.
+                        Když se vzdálíš 3x, síla klesne 9x!
                     </div>
                 </div>
                 <hr class="my-5">
@@ -1201,17 +1425,21 @@
             <div class="ucivo-blok" data-tags="ss4 all">
                 <span class="badge-level level-ss">SŠ (4. ročník)</span>
                 <h3>5. Vznik a vývoj vesmíru</h3>
-                <p>Vesmír vznikl před cca 13,8 miliardami let událostí zvanou <strong>Velký třesk (Big Bang)</strong>. Od té doby se vesmír neustále rozpíná a chladne.</p>
-                
+                <p>Vesmír vznikl před cca 13,8 miliardami let událostí zvanou <strong>Velký třesk (Big Bang)</strong>.
+                    Od té doby se vesmír neustále rozpíná a chladne.</p>
+
                 <div class="card bg-light border-0 mb-3">
                     <div class="card-body">
                         <strong>Jak víme, že se rozpíná? (Hubbleův zákon)</strong><br>
-                        Edwin Hubble zjistil, že galaxie se od nás vzdalují. Čím jsou dál, tím rychleji uhánějí pryč. Poznáme to podle <strong>rudého posuvu</strong> (světlo vzdalujících se hvězd se natahuje do červené barvy, podobně jako se snižuje tón odjíždějící sanitky).
+                        Edwin Hubble zjistil, že galaxie se od nás vzdalují. Čím jsou dál, tím rychleji uhánějí pryč.
+                        Poznáme to podle <strong>rudého posuvu</strong> (světlo vzdalujících se hvězd se natahuje do
+                        červené barvy, podobně jako se snižuje tón odjíždějící sanitky).
                     </div>
                 </div>
 
                 <div class="formula-box">$$ v = H \cdot r $$</div>
-                <p>Rychlost vzdalování ($v$) je přímo úměrná vzdálenosti ($r$). Konstanta $H$ se nazývá Hubbleova konstanta.</p>
+                <p>Rychlost vzdalování ($v$) je přímo úměrná vzdálenosti ($r$). Konstanta $H$ se nazývá Hubbleova
+                    konstanta.</p>
             </div>
 
         </div>
@@ -1223,18 +1451,22 @@
             <div class="row">
 
                 <div class="col-md-6" style="margin: auto;">
-                <a href="https://www.instagram.com/oavalmez/" target="_blank"  class="ikona"><i class="fab fa-instagram fa-3x"></i></a>
-                <a href="https://www.youtube.com/@obchodniakademieavos6757" target="_blank" class="ikona"><i class="fa-brands fa-youtube fa-3x"></i></a>
-                <a href="https://soundcloud.com/obchodn-akademie-a-vo" target="_blank" class="ikona"><i class="fa-brands fa-soundcloud fa-3x"></i></a>
-                </div> 
+                    <a href="https://www.instagram.com/oavalmez/" target="_blank" class="ikona"><i
+                            class="fab fa-instagram fa-3x"></i></a>
+                    <a href="https://www.youtube.com/@obchodniakademieavos6757" target="_blank" class="ikona"><i
+                            class="fa-brands fa-youtube fa-3x"></i></a>
+                    <a href="https://soundcloud.com/obchodn-akademie-a-vo" target="_blank" class="ikona"><i
+                            class="fa-brands fa-soundcloud fa-3x"></i></a>
+                </div>
 
-                <div class="col-md-6" style="margin: auto;">
-                    <a href="https://www.oavm.cz" target="_blank"><img src="img/oavm-logo-red_blue.svg" alt="" class="img-fluid" width="150px" style="padding: 5px 5px;"></a> 
-                    <p>David Gach & Štěpán Daniel &copy; 2025</p>
+                <div class="col-md-6" style="margin: auto; padding: 7px 7px;">
+                    <a href="https://www.oavm.cz" target="_blank"><img src="img/oavm-logo-red_blue.svg" alt=""
+                            class="img-fluid" width="150px"></a>
+                    <p style="margin: 0;">David Gach & Štěpán Daniel &copy; 2025</p>
 
                 </div>
 
-                
+
 
 
             </div>
@@ -1245,4 +1477,5 @@
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/7fb6bac9d6.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
